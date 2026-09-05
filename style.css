@@ -1,0 +1,1121 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Vazirmatn", sans-serif;
+    overflow: hidden;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.question-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffffff 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, #d8f3ff 0%, transparent 30%),
+        linear-gradient(135deg, #eaf9ff, #ccefff);
+
+    padding: 20px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.question-card {
+    width: 100%;
+    max-width: 480px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    padding: 45px 30px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 20px 60px rgba(74, 159, 194, 0.18);
+
+    backdrop-filter: blur(15px);
+
+    animation: cardAppear 0.8s ease;
+}
+
+
+/* =========================
+   EMOJI
+========================= */
+
+.emoji {
+    font-size: 65px;
+    margin-bottom: 20px;
+
+    animation: floating 2.5s ease-in-out infinite;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.question-card h1 {
+    font-size: 27px;
+    font-weight: 800;
+
+    color: #24566b;
+
+    margin-bottom: 15px;
+}
+
+.question-card p {
+    font-size: 19px;
+    font-weight: 500;
+
+    color: #527789;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.buttons button {
+    border: none;
+    outline: none;
+
+    padding: 13px 30px;
+
+    border-radius: 15px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* YES */
+
+.yes-btn {
+    background: linear-gradient(135deg, #65c9ee, #3aaed8);
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(58, 174, 216, 0.25);
+}
+
+.yes-btn:hover {
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 12px 25px rgba(58, 174, 216, 0.35);
+}
+
+
+/* NO */
+
+.no-btn {
+    background: #ffffff;
+
+    color: #6f8792;
+
+    border: 1px solid #dceef5 !important;
+}
+
+.no-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   NO MESSAGE
+========================= */
+
+#noMessage {
+    min-height: 30px;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #5791a8;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================
+   FLOATING ELEMENTS
+========================= */
+
+.hearts span {
+    position: absolute;
+
+    font-size: 25px;
+
+    opacity: 0.65;
+
+    animation: floatAround 6s ease-in-out infinite;
+}
+
+.hearts span:nth-child(1) {
+    top: 15%;
+    left: 12%;
+    animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+    top: 25%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(3) {
+    bottom: 20%;
+    left: 18%;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(4) {
+    bottom: 15%;
+    right: 12%;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(5) {
+    top: 10%;
+    left: 50%;
+    animation-delay: 1.5s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@keyframes floatAround {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .question-card {
+        padding: 38px 22px;
+        border-radius: 25px;
+    }
+
+    .emoji {
+        font-size: 55px;
+    }
+
+    .question-card h1 {
+        font-size: 23px;
+    }
+
+    .question-card p {
+        font-size: 17px;
+    }
+
+    .buttons button {
+        padding: 12px 25px;
+    }
+
+    .hearts span {
+        font-size: 20px;
+    }
+}
+/* =========================
+   DATE PAGE
+========================= */
+
+.date-card {
+    max-width: 520px;
+}
+
+.input-group {
+    margin-bottom: 22px;
+    text-align: right;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #416f80;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   PERSIAN CALENDAR
+========================= */
+
+.persian-date-picker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(235, 249, 255, 0.9);
+
+    border: 1px solid #d8edf5;
+
+    border-radius: 15px;
+
+    padding: 8px;
+}
+
+.calendar-title {
+    color: #315f72;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    text-align: center;
+}
+
+.calendar-nav {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: white;
+
+    color: #4aaed0;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.calendar-nav:hover {
+    transform: scale(1.08);
+    background: #e8f8ff;
+}
+
+
+/* =========================
+   WEEKDAYS
+========================= */
+
+.weekdays {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 5px;
+
+    margin-top: 12px;
+    margin-bottom: 7px;
+
+    text-align: center;
+}
+
+.weekdays span {
+    color: #79a2b2;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   DAYS
+========================= */
+
+.calendar-days {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 6px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    color: #456d7c;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.calendar-day:hover {
+    background: #dff5ff;
+
+    transform: translateY(-2px);
+}
+
+.calendar-day.empty {
+    background: transparent;
+
+    cursor: default;
+
+    pointer-events: none;
+}
+
+.calendar-day.today {
+    border: 2px solid #70c8e7;
+
+    color: #3197bc;
+}
+
+.calendar-day.selected {
+    background: linear-gradient(
+        135deg,
+        #65c9ee,
+        #3aaed8
+    );
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px rgba(58, 174, 216, 0.25);
+
+    transform: scale(1.05);
+}
+
+.calendar-day.disabled {
+    opacity: 0.3;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   SELECTED DATE
+========================= */
+
+.selected-date {
+    margin-top: 12px;
+
+    padding: 10px 12px;
+
+    border-radius: 12px;
+
+    background: #f1fbff;
+
+    color: #4d8296;
+
+    text-align: center;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   TIME SELECT
+========================= */
+
+#time {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d8edf5;
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #416f80;
+
+    font-family: inherit;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#time:focus {
+    border-color: #71c9e7;
+
+    box-shadow:
+        0 0 0 4px rgba(113, 201, 231, 0.12);
+}
+
+
+.confirm-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px 24px;
+
+    border: none;
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #4facfe,
+        #00c6ff
+    );
+
+    color: white;
+
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0, 170, 255, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* افکت نور روی دکمه */
+
+.confirm-btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+
+/* هاور */
+
+.confirm-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(0, 170, 255, 0.35);
+
+    filter: brightness(1.05);
+}
+
+
+.confirm-btn:hover::before {
+    left: 130%;
+}
+
+
+/* کلیک */
+
+.confirm-btn:active {
+    transform: scale(0.97);
+    box-shadow:
+        0 6px 15px rgba(0, 170, 255, 0.25);
+}
+
+/* =========================
+   DATE MESSAGE
+========================= */
+
+#dateMessage {
+    min-height: 25px;
+
+    margin-top: 14px;
+
+    color: #5791a8;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .date-card {
+        padding: 30px 18px;
+    }
+
+    .calendar-day {
+        border-radius: 9px;
+
+        font-size: 12px;
+    }
+
+    .calendar-days {
+        gap: 4px;
+    }
+
+    .weekdays {
+        gap: 4px;
+    }
+
+    .calendar-nav {
+        width: 35px;
+        height: 35px;
+    }
+
+    .calendar-title {
+        font-size: 14px;
+    }
+}
+/* =========================
+   SUCCESS PAGE
+========================= */
+
+.success-page {
+    position: relative;
+}
+
+
+/* =========================
+   SUCCESS CARD
+========================= */
+
+.success-card {
+    max-width: 520px;
+
+    animation:
+        successAppear 0.9s ease;
+}
+
+
+/* =========================
+   SUCCESS EMOJI
+========================= */
+
+.success-emoji {
+    font-size: 70px;
+
+    margin-bottom: 15px;
+
+    animation:
+        successBounce 1.5s ease-in-out infinite;
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.success-badge {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    margin-bottom: 15px;
+
+    border-radius: 30px;
+
+    background: #e5f8ff;
+
+    color: #3996b6;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.success-card h1 {
+    font-size: 28px;
+
+    color: #24566b;
+
+    margin-bottom: 12px;
+}
+
+.success-text {
+    color: #608392;
+
+    font-size: 16px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   DATE RESULT
+========================= */
+
+.date-result {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.result-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    border-radius: 17px;
+
+    background: #f0fbff;
+
+    border: 1px solid #dceff5;
+
+    text-align: right;
+}
+
+.result-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: white;
+
+    font-size: 20px;
+}
+
+.result-item small {
+    display: block;
+
+    color: #82a3af;
+
+    font-size: 11px;
+
+    margin-bottom: 4px;
+}
+
+.result-item strong {
+    display: block;
+
+    color: #3c7082;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   LOVE MESSAGE
+========================= */
+
+.love-message {
+    padding: 20px 15px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4fcff,
+            #e8f8ff
+        );
+
+    color: #527889;
+
+    font-size: 15px;
+
+    line-height: 2.1;
+}
+
+.love-message p {
+    margin: 2px 0;
+}
+
+
+/* =========================
+   WAITING
+========================= */
+
+.waiting {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 22px;
+
+    color: #4ba2c1;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.success-hearts span {
+    position: absolute;
+
+    font-size: 25px;
+
+    opacity: 0.7;
+
+    animation:
+        successFloat 5s ease-in-out infinite;
+}
+
+.success-hearts span:nth-child(1) {
+    top: 12%;
+    left: 12%;
+}
+
+.success-hearts span:nth-child(2) {
+    top: 25%;
+    right: 13%;
+
+    animation-delay: 1s;
+}
+
+.success-hearts span:nth-child(3) {
+    bottom: 18%;
+    left: 15%;
+
+    animation-delay: 2s;
+}
+
+.success-hearts span:nth-child(4) {
+    bottom: 12%;
+    right: 15%;
+
+    animation-delay: 3s;
+}
+
+.success-hearts span:nth-child(5) {
+    top: 10%;
+    left: 48%;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes successAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes successBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+@keyframes successFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(8deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .success-card {
+        padding: 30px 18px;
+    }
+
+    .success-emoji {
+        font-size: 58px;
+    }
+
+    .success-card h1 {
+        font-size: 24px;
+    }
+
+    .success-text {
+        font-size: 14px;
+    }
+
+    .date-result {
+        grid-template-columns: 1fr;
+    }
+
+    .love-message {
+        font-size: 14px;
+    }
+}
+/* ========================================
+   YES BUTTON TRANSITION
+======================================== */
+
+.question-card.leaving {
+
+    animation:
+        cardLeave 1.2s ease forwards;
+
+}
+
+
+/* ========================================
+   LOVE PARTICLES
+======================================== */
+
+.love-particle {
+
+    position: fixed;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, -50%);
+
+    animation:
+        loveExplosion 1.2s
+        cubic-bezier(.17,.67,.32,1.3)
+        forwards;
+
+}
+
+
+/* ========================================
+   CARD LEAVE ANIMATION
+======================================== */
+
+@keyframes cardLeave {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    35% {
+
+        transform:
+            scale(1.05)
+            translateY(-8px);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.75)
+            translateY(-35px);
+
+    }
+
+}
+
+
+/* ========================================
+   HEART EXPLOSION
+======================================== */
+
+@keyframes loveExplosion {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.3)
+            rotate(0deg);
+
+    }
+
+    15% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.2);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(0.7)
+            rotate(25deg);
+
+    }
+
+}

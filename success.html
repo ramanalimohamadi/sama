@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>قرارمون ثبت شد 💙</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <main class="question-page success-page">
+
+        <div class="success-hearts">
+            <span>💙</span>
+            <span>✨</span>
+            <span>🌸</span>
+            <span>💙</span>
+            <span>✨</span>
+        </div>
+
+
+        <div class="question-card success-card">
+
+            <div class="success-emoji">
+                🥹💙
+            </div>
+
+            <div class="success-badge">
+                ✓ قرار ثبت شد
+            </div>
+
+            <h1>
+                قرارمون ثبت شددد! 🥳
+            </h1>
+
+            <p class="success-text">
+                سمای خوشگلم، بالاخره قرارمون قطعی شد! 🌸
+            </p>
+
+
+            <div class="date-result">
+
+                <div class="result-item">
+
+                    <span class="result-icon">
+                        📅
+                    </span>
+
+                    <div>
+                        <small>
+                            تاریخ قرار
+                        </small>
+
+                        <strong id="finalDate">
+                            ...
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="result-item">
+
+                    <span class="result-icon">
+                        ⏰
+                    </span>
+
+                    <div>
+                        <small>
+                            ساعت قرار
+                        </small>
+
+                        <strong id="finalTime">
+                            ...
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="love-message">
+
+                <p>
+                    پس قرارمون شد
+                    <span id="finalDateText">...</span>
+                    ساعت
+                    <span id="finalTimeText">...</span>
+                    💙
+                </p>
+
+                <p>
+                    من منتظرتم...
+                </p>
+
+                <p>
+                    دیر نکنی‌هااا 😌🌸
+                </p>
+
+            </div>
+
+
+            <div class="waiting">
+
+                <span>💙</span>
+                <span>منتظرتم</span>
+                <span>💙</span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        /* =========================
+           GET APPOINTMENT
+        ========================= */
+
+        const savedDate =
+            localStorage.getItem("ourDate");
+
+
+        if (!savedDate) {
+
+            window.location.href = "index.html";
+
+        } else {
+
+            const appointment =
+                JSON.parse(savedDate);
+
+
+            /*
+                تبدیل اعداد انگلیسی به فارسی
+            */
+
+            function toPersianNumber(number) {
+
+                return String(number).replace(
+                    /\d/g,
+                    digit => "۰۱۲۳۴۵۶۷۸۹"[digit]
+                );
+
+            }
+
+
+            /*
+                نمایش تاریخ
+            */
+
+            const dateText =
+                `${appointment.weekday} ${toPersianNumber(appointment.day)} ${appointment.monthName} ${toPersianNumber(appointment.year)}`;
+
+
+            /*
+                نمایش ساعت
+            */
+
+            const timeText =
+                appointment.time
+                    .split(":")
+                    .map(toPersianNumber)
+                    .join(":");
+
+
+            document.getElementById("finalDate")
+                .textContent = dateText;
+
+
+            document.getElementById("finalTime")
+                .textContent = timeText;
+
+
+            document.getElementById("finalDateText")
+                .textContent = dateText;
+
+
+            document.getElementById("finalTimeText")
+                .textContent = timeText;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

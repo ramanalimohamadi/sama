@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>قرارمون 💙</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <main class="question-page">
+
+        <div class="question-card date-card">
+
+            <div class="emoji">
+                🗓️💙
+            </div>
+
+            <h1>
+                خببب، پس قرارمون قطعی شد! 🥹
+            </h1>
+
+            <p>
+                حالا بگو کی و چه ساعتی رو دوست داری؟ 🌸
+            </p>
+
+
+            <!-- =========================
+                 DATE PICKER
+            ========================== -->
+
+            <div class="input-group">
+
+                <label>
+                    📅 تاریخ قرار
+                </label>
+
+                <div class="persian-date-picker">
+
+                    <button
+                        type="button"
+                        class="calendar-nav"
+                        id="prevMonth"
+                    >
+                        ‹
+                    </button>
+
+                    <div
+                        class="calendar-title"
+                        id="calendarTitle"
+                    >
+                        در حال بارگذاری...
+                    </div>
+
+                    <button
+                        type="button"
+                        class="calendar-nav"
+                        id="nextMonth"
+                    >
+                        ›
+                    </button>
+
+                </div>
+
+
+                <div class="weekdays">
+
+                    <span>ش</span>
+                    <span>ی</span>
+                    <span>د</span>
+                    <span>س</span>
+                    <span>چ</span>
+                    <span>پ</span>
+                    <span>ج</span>
+
+                </div>
+
+
+                <div
+                    class="calendar-days"
+                    id="calendarDays"
+                ></div>
+
+
+                <div
+                    class="selected-date"
+                    id="selectedDate"
+                >
+                    هنوز تاریخی انتخاب نکردی 🌸
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 TIME
+            ========================== -->
+
+            <div class="input-group">
+
+                <label for="time">
+                    ⏰ ساعت قرار
+                </label>
+<select id="time">
+    <option value="">انتخاب ساعت</option>
+
+    <option value="13:00">۱۳:۰۰</option>
+    <option value="13:30">۱۳:۳۰</option>
+
+    <option value="14:00">۱۴:۰۰</option>
+    <option value="14:30">۱۴:۳۰</option>
+
+    <option value="15:00">۱۵:۰۰</option>
+    <option value="15:30">۱۵:۳۰</option>
+
+    <option value="16:00">۱۶:۰۰</option>
+    <option value="16:30">۱۶:۳۰</option>
+
+    <option value="17:00">۱۷:۰۰</option>
+    <option value="17:30">۱۷:۳۰</option>
+
+    <option value="18:00">۱۸:۰۰</option>
+    <option value="18:30">۱۸:۳۰</option>
+
+    <option value="19:00">۱۹:۰۰</option>
+    <option value="19:30">۱۹:۳۰</option>
+
+    <option value="20:00">۲۰:۰۰</option>
+    <option value="20:30">۲۰:۳۰</option>
+
+    <option value="21:00">۲۱:۰۰</option>
+    <option value="21:30">۲۱:۳۰</option>
+
+    <option value="22:00">۲۲:۰۰</option>
+    <option value="22:30">۲۲:۳۰</option>
+
+    <option value="23:00">۲۳:۰۰</option>
+    <option value="23:30">۲۳:۳۰</option>
+
+    <option value="00:00">۰۰:۰۰ (۱۲ شب)</option>
+</select>
+
+            </div>
+
+
+            <!-- =========================
+                 CONFIRM
+            ========================== -->
+
+            <button
+                class="yes-btn confirm-btn"
+                id="confirmBtn"
+                onclick="confirmDate()"
+            >
+                ثبت قرارمون 💙
+            </button>
+
+
+            <div id="dateMessage"></div>
+
+        </div>
+
+    </main>
+
+
+    <script src="./main.js"></script>
+
+</body>
+
+</html>
